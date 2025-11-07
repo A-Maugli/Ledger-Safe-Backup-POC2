@@ -163,7 +163,8 @@ $ seed=`slip39 -v --bits 256 --show --no-card`
 2025-11-07 08:29:28 slip39               11 blind     22 activity  33 wrote
 2025-11-07 08:29:28 slip39.layout    ETH    m/44'/60'/0'/0/0    : 0x0e0789E9E8Cc102Ef2550C65d054416D56b5c63A
 2025-11-07 08:29:28 slip39.layout    BTC    m/84'/0'/0'/0/0     : bc1qs6nwh0axd64kclmsmyd20w9xcmj4w5f8yk4xny
-rnd256=$(echo "$seed" | awk 'match($0, /0x[0-9a-fA-F]+/) {print substr($0, RSTART+2, RLENGTH-2)}')
+
+$ rnd256=$(echo "$seed" | awk 'match($0, /0x[0-9a-fA-F]+/) {print substr($0, RSTART+2, RLENGTH-2)}')
 
 $ echo $rnd256
 4d2fd549a041921cec8a8d2a90d9f438d6a5cec74d1cd256fd5f5a2955c182d1
@@ -192,7 +193,7 @@ OTP:
 1393dfef a12e5a0d a9bf839a bf8dc3ba
 77be579c 46d39846 a3440be4 40c3f85a
 
-First 8 char of SHA256(OTP), i.e. checksum(OTP):
+First 8 hexa digit of SHA256(OTP), i.e. checksum(OTP):
 d361cb9f
 
 SLIP39 
@@ -334,7 +335,7 @@ First(1/1): Recover w/ 2 of 4 groups First(1), Second(1), Fam(2/4), Frens(3/6)
                10 visual    21 divorce   32 human
                11 blind     22 activity  33 wrote
 ```
-
+Print `aux_tables/ascii_hex.txt`, `aux_tables/xor_table.txt` and `aux-tables/bip-39/english.txt`
 
 ## Switch off the computer. The following computations MUST be done manually.
 ```
@@ -394,106 +395,107 @@ OTP23:a3440be4
 OTP24:40c3f85a
 ```
 
-## Compute encrypted passphrase MANUALLY, using ascii_hex table and xor table
+## Compute encrypted passphrase MANUALLY
+Use ascii_hex.txt and xor_table.txt printed previously.
 
-Note: The first four characters of each passphrase words are unique. Encrypt only these characters. If a word is less than 4 character long, fill it up with space.
+Note: The first four characters of each passphrase words are unique. Encrypt only these characters. If a word is less than 4 characters long, fill it up with space(s).
 
 ```
 		char	hex
-word1:	poem  	70 6f 65 6d
-OTP1:			56 bd 83 20
+word1:	poem  70 6f 65 6d
+OTP1:			    56 bd 83 20
 enc(word1):		26 d2 e6 4d
 
 word2:	surp	73 75 72 70
-OTP2:			d3 97 26 86
+OTP2:			    d3 97 26 86
 enc(word2):		a0 e2 54 f6
 
 word3:	requ	72 65 71 75
-OTP3:			1a f6 7a 62
+OTP3:			    1a f6 7a 62
 enc(word3):		68 93 0b 17
 
 word4: 	opin	6f 70 69 6e
-OTP4:			7f 26 25 11 
+OTP4:			    7f 26 25 11 
 enc(word4):		10 56 4c 7f
 
 word 5:	rent	72 65 6e 74
-OTP5:			88 d3 c0 65
+OTP5:			    88 d3 c0 65
 enc(word5):		fa b6 ae 11
 
 word 6:	uncl	75 6e 63 6c
-OTP6:			d1 dd 67 de
+OTP6:			    d1 dd 67 de
 enc(word6):		a4 b3 04 b2
 
 word 7: dwar	64 77 61 72
-OTP7:			bb 5e 03 78
+OTP7:			    bb 5e 03 78
 enc(word7):		df 29 62 0a
 
 word 8: mamm	6d 61 6d 6d
-OTP8:			e2 92 db 7c 
+OTP8:			    e2 92 db 7c 
 enc(word8):		8f f3 b6 11
 
 word 9: epis	65 70 69 73
-OTP9:			33 ee 70 5a
+OTP9:			    33 ee 70 5a
 enc(word9):		56 9e 19 29
 
 word10: flam	66 6c 61 6d
-OTP10:			24 64 c6 90 
+OTP10:			  24 64 c6 90 
 enc(word10):	42 08 a7 fd
 
 word11: buil	62 75 69 6c
-OTP11:			21 da a3 a6
+OTP11:			  21 da a3 a6
 enc(word11):	43 af ca ca
 
 word12: hamm	68 61 6d 6d
-OTP12:			38 64 0a 0a
+OTP12:			  38 64 0a 0a
 enc(word12):	50 05 67 67
 
 word13:	mate	6d 61 74 65
-OTP13:			29 3c 7c 03
+OTP13:			  29 3c 7c 03
 enc(word13):	44 5d 08 66
 
 word14: twic	74 77 69 63
-OTP14:			e3 dd 4a aa
+OTP14:			  e3 dd 4a aa
 enc(word14):	97 aa 23 c9
 
 word15:	rura	72 75 72 61
-OTP15:			ff 6f b4 1a
+OTP15:			  ff 6f b4 1a
 enc(word15):	8d 1a c6 7b
 
 word16: doll 	64 6f 6c 6c 
-OTP16:			d7 15 4d 4e
+OTP16:			  d7 15 4d 4e
 enc(word16):	b3 7a 21 22
 
 word17: riva	72 69 76 61
-OTP17:			13 93 df ef
+OTP17:			  13 93 df ef
 enc(word17):	61 fa a9 8e
 
 word18: sugg	73 75 67 67
-OTP18:			a1 2e 5a 0d
+OTP18:			  a1 2e 5a 0d
 enc(word18):	d2 5b 3d 6a
 
 word19:	sick 	73 69 63 6b
-OTP19:			a9 bf 83 9a
+OTP19:			  a9 bf 83 9a
 enc(word19):	da d6 e0 f1
 
 word20:	dyna	64 79 6e 61
-OTP20:			bf 8d c3 ba
+OTP20:			  bf 8d c3 ba
 enc(word20):	db f4 ad db
 
 word21:	popu	70 6f 70 75
-OTP21:			77 be 57 9c
+OTP21:			  77 be 57 9c
 enc(word21):	07 d1 27 e9
 
 word22: clin	63 6c 69 6e
-OTP22:			46 d3 98 46
+OTP22:			  46 d3 98 46
 enc(word22):	25 bf f1 28
 
 word23:	napk	6e 61 70 6b
-OTP23:			a3 44 0b e4
+OTP23:			  a3 44 0b e4
 enc(word23):	cd 25 7b 8f
 
 word24:	styl	73 74 79 6c
-OTP24:			40 c3 f8 5a
+OTP24:			  40 c3 f8 5a
 enc(word24):	33 b7 81 36
 ```
 
@@ -505,7 +507,7 @@ enc(word24):	33 b7 81 36
     secret_checksum: "d361cb9f",
     creation_date: "20251107T0854",
     total_groups: 4,
-    treshold: 2
+    threshold: 2
 
   Encrypted_passphrase:  
     enc(word1):		26 d2 e6 4d
@@ -555,7 +557,7 @@ enc(word24):	33 b7 81 36
     secret_checksum: "d361cb9f",
     creation_date: "20251107T0854",
     total_groups: 4,
-    treshold: 2
+    threshold: 2
 
   Encrypted_passphrase:  
     enc(word1):		26 d2 e6 4d
@@ -605,7 +607,7 @@ enc(word24):	33 b7 81 36
     secret_checksum: "d361cb9f",
     creation_date: "20251107T0854",
     total_groups: 4,
-    treshold: 2
+    threshold: 2
 
   Encrypted_passphrase:  
     enc(word1):		26 d2 e6 4d
@@ -647,10 +649,10 @@ enc(word24):	33 b7 81 36
                10 guilt     21 debut     32 tricycle
                11 explain   22 violence  33 rapids
 ```
-etc. etc. 12 shares all together.
+etc. etc. 12 shares altogether.
 
 ## Test restore
-Execute the "Ledger safe restore" procedure to verify that you can restore Ledger master passphrase.
+Execute the ["Ledger safe restore"](./doc/ledger_safe_restore_example.md) procedure to verify that you can restore Ledger master passphrase.
 
 ## Store and destroy
 Store the shares securely before distribution.

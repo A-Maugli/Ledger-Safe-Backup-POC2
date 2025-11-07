@@ -9,7 +9,7 @@
     secret_checksum: "d361cb9f",
     creation_date: "20251107T0854",
     total_groups: 4,
-    treshold: 2
+    threshold: 2
 
   Encrypted_passphrase:  
     enc(word1):		26 d2 e6 4d
@@ -59,7 +59,7 @@
     secret_checksum: "d361cb9f",
     creation_date: "20251107T0854",
     total_groups: 4,
-    treshold: 2
+    threshold: 2
 
   Encrypted_passphrase:  
     enc(word1):		26 d2 e6 4d
@@ -181,7 +181,7 @@ OTP24:40c3f85a
 ## Switch off the computer
 
 The following computations MUST be done manually, on a piece of paper,
-using the xor_table.txt and ascii_hex_table.txt and bip-39/english.txt
+using the xor_table.txt and ascii_hex.txt and bip-39/english.txt
 Print the tables and use them independently from a computer.
 
 ```
@@ -283,7 +283,7 @@ Passphrase
 	word24:			73 74 79 6c => styl => style
 ```
 
-## Write down Ledger master passhprase on a Recovery Sheet
+## Write down Ledger master passphrase on a Recovery Sheet
 ```
 word1:	poem 
 word2:	surprise
@@ -312,7 +312,7 @@ word24:	style
 ```
 
 ## Recover Ledger 
-From the Recovery Sheet, enter Master Passhprase to a Ledger HW wallet.
+From the Recovery Sheet, enter Master Passphrase to a Ledger HW wallet.
 
 Verify the generated addresses and account balances.
 

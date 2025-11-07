@@ -3,7 +3,7 @@
 Problem:
 Ledger HW wallet has a 24-word master passphrase. This passphrase should never be entered 
 into a computer, to keep it safe. But at the same time, it should be backed up securely.
-The backup should be in the form of shares, where m out of n shares is sufficient for recovery.
+The backup should be in the form of shares, where m out of n shares are sufficient for recovery.
 
 ## Backup
 - Set up a secure computing environment.
@@ -24,7 +24,7 @@ See the details at [ledger_safe_backup_example.md](./doc/ledger_safe_backup_exam
 ## Restore
 - Collect the required number of shares.
 - Set up a secure computing environment.
-- Install the SLI39 Python package.
+- Install the SLIP39 Python package.
 - Using SLIP39 recovery, compute the 256-bit Master Seed from the shares.
 - Compute the 768-bit one-time pad (OTP) from the Master Seed
 - Compute the checksum of the OTP and compare it with checksum on shares.
@@ -35,4 +35,4 @@ See the details at [ledger_safe_backup_example.md](./doc/ledger_safe_backup_exam
 - Enter the passphrase into a Ledger HW wallet.
 - Restore your accounts and verify addresses and balances.
 
-See the details at [ledger_safe_restore_example.md](./doc/ledger_safe_restore_example.txt)
+See the details at [ledger_safe_restore_example.md](./doc/ledger_safe_restore_example.md)

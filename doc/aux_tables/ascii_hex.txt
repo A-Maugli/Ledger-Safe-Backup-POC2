@@ -1,0 +1,52 @@
+ASCII => HEX (in 4 columns)
+---------------------------
+ :20  @:40  `:60  .:7f  
+!:21  A:41  a:61  .:80  
+":22  B:42  b:62  .:81  
+#:23  C:43  c:63  .:82  
+$:24  D:44  d:64  .:83  
+%:25  E:45  e:65  .:84  
+&:26  F:46  f:66  .:85  
+':27  G:47  g:67  .:86  
+(:28  H:48  h:68  .:87  
+):29  I:49  i:69  .:88  
+*:2a  J:4a  j:6a  .:89  
++:2b  K:4b  k:6b  .:8a  
+,:2c  L:4c  l:6c  .:8b  
+-:2d  M:4d  m:6d  .:8c  
+.:2e  N:4e  n:6e  .:8d  
+/:2f  O:4f  o:6f  .:8e  
+0:30  P:50  p:70  .:8f  
+1:31  Q:51  q:71  .:90  
+2:32  R:52  r:72  .:91  
+3:33  S:53  s:73  .:92  
+4:34  T:54  t:74  .:93  
+5:35  U:55  u:75  .:94  
+6:36  V:56  v:76  .:95  
+7:37  W:57  w:77  .:96  
+8:38  X:58  x:78  .:97  
+9:39  Y:59  y:79  .:98  
+::3a  Z:5a  z:7a  .:99  
+;:3b  [:5b  {:7b  .:9a  
+<:3c  \:5c  |:7c  .:9b  
+=:3d  ]:5d  }:7d  .:9c  
+>:3e  ^:5e  ~:7e  .:9d  
+?:3f  _:5f  .:7e  .:9e  
+
+
+def ascii_to_hex_compact():
+    print("ASCII => HEX (in 4 columns)")
+    print("---------------------------")
+    for row in range(32):
+        line = ""
+        for col in range(4):
+            i = row + col * 32
+            if 32 <= i <= 126:
+                char = chr(i)
+            else:
+                char = "."
+            hex_val = f"{i:02x}"
+            line += f"{char}:{hex_val}  "
+        print(line)
+
+ascii_to_hex_compact()

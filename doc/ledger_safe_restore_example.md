@@ -181,7 +181,7 @@ OTP24:40c3f85a
 ## Switch off the computer
 
 The following computations MUST be done manually, on a piece of paper,
-using the xor_table.txt and ascii_hex.txt and bip-39/english.txt
+using the `aux_tables/xor_table.txt`, `aux_tables/ascii_hex.txt` and `aux_tables/bip-39/english.txt`.
 Print the tables and use them independently from a computer.
 
 ```

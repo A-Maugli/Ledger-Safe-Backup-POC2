@@ -177,7 +177,7 @@ $ echo $otp
 56bd8320d39726861af67a627f26251188d3c065d1dd67debb5e0378e292db7c33ee705a2464c69021daa3a638640a0a293c7c03e3dd4aaaff6fb41ad7154d4e1393dfefa12e5a0da9bf839abf8dc3ba77be579c46d39846a3440be440c3f85a
 ```
 
-# Generate SHA256 of OTP 
+## Generate SHA256 of OTP 
 ```
 $ echo -n $otp | sha256sum
 d361cb9f08c74c6cfba2ae765ff9ade9b031252b69587e15e2c976813c4a46b9  -
@@ -401,102 +401,102 @@ Use ascii_hex.txt and xor_table.txt printed previously.
 Note: The first four characters of each passphrase words are unique. Encrypt only these characters. If a word is less than 4 characters long, fill it up with space(s).
 
 ```
-		char	hex
+        char	hex
 word1:	poem  70 6f 65 6d
-OTP1:			    56 bd 83 20
-enc(word1):		26 d2 e6 4d
+OTP1:         56 bd 83 20
+enc(word1):   26 d2 e6 4d
 
-word2:	surp	73 75 72 70
-OTP2:			    d3 97 26 86
-enc(word2):		a0 e2 54 f6
+word2:	surp  73 75 72 70
+OTP2:         d3 97 26 86
+enc(word2):   a0 e2 54 f6
 
-word3:	requ	72 65 71 75
-OTP3:			    1a f6 7a 62
-enc(word3):		68 93 0b 17
+word3:	requ  72 65 71 75
+OTP3:         1a f6 7a 62
+enc(word3):   68 93 0b 17
 
-word4: 	opin	6f 70 69 6e
-OTP4:			    7f 26 25 11 
-enc(word4):		10 56 4c 7f
+word4: 	opin  6f 70 69 6e
+OTP4:         7f 26 25 11 
+enc(word4):   10 56 4c 7f
 
-word 5:	rent	72 65 6e 74
-OTP5:			    88 d3 c0 65
-enc(word5):		fa b6 ae 11
+word 5:	rent  72 65 6e 74
+OTP5:         88 d3 c0 65
+enc(word5):   fa b6 ae 11
 
-word 6:	uncl	75 6e 63 6c
-OTP6:			    d1 dd 67 de
-enc(word6):		a4 b3 04 b2
+word 6:	uncl  75 6e 63 6c
+OTP6:         d1 dd 67 de
+enc(word6):   a4 b3 04 b2
 
-word 7: dwar	64 77 61 72
-OTP7:			    bb 5e 03 78
-enc(word7):		df 29 62 0a
+word 7: dwar  64 77 61 72
+OTP7:         bb 5e 03 78
+enc(word7):   df 29 62 0a
 
-word 8: mamm	6d 61 6d 6d
-OTP8:			    e2 92 db 7c 
-enc(word8):		8f f3 b6 11
+word 8: mamm  6d 61 6d 6d
+OTP8:         e2 92 db 7c 
+enc(word8):   8f f3 b6 11
 
-word 9: epis	65 70 69 73
-OTP9:			    33 ee 70 5a
-enc(word9):		56 9e 19 29
+word 9: epis  65 70 69 73
+OTP9:         33 ee 70 5a
+enc(word9):   56 9e 19 29
 
-word10: flam	66 6c 61 6d
-OTP10:			  24 64 c6 90 
-enc(word10):	42 08 a7 fd
+word10: flam  66 6c 61 6d
+OTP10:        24 64 c6 90 
+enc(word10):  42 08 a7 fd
 
-word11: buil	62 75 69 6c
-OTP11:			  21 da a3 a6
-enc(word11):	43 af ca ca
+word11: buil  62 75 69 6c
+OTP11:        21 da a3 a6
+enc(word11):  43 af ca ca
 
-word12: hamm	68 61 6d 6d
-OTP12:			  38 64 0a 0a
-enc(word12):	50 05 67 67
+word12: hamm  68 61 6d 6d
+OTP12:        38 64 0a 0a
+enc(word12):  50 05 67 67
 
-word13:	mate	6d 61 74 65
-OTP13:			  29 3c 7c 03
-enc(word13):	44 5d 08 66
+word13:	mate  6d 61 74 65
+OTP13:        29 3c 7c 03
+enc(word13):  44 5d 08 66
 
-word14: twic	74 77 69 63
-OTP14:			  e3 dd 4a aa
-enc(word14):	97 aa 23 c9
+word14: twic  74 77 69 63
+OTP14:        e3 dd 4a aa
+enc(word14):  97 aa 23 c9
 
-word15:	rura	72 75 72 61
-OTP15:			  ff 6f b4 1a
-enc(word15):	8d 1a c6 7b
+word15:	rura  72 75 72 61
+OTP15:        ff 6f b4 1a
+enc(word15):  8d 1a c6 7b
 
-word16: doll 	64 6f 6c 6c 
-OTP16:			  d7 15 4d 4e
-enc(word16):	b3 7a 21 22
+word16: doll  64 6f 6c 6c 
+OTP16:        d7 15 4d 4e
+enc(word16):  b3 7a 21 22
 
-word17: riva	72 69 76 61
-OTP17:			  13 93 df ef
-enc(word17):	61 fa a9 8e
+word17: riva  72 69 76 61
+OTP17:        13 93 df ef
+enc(word17):  61 fa a9 8e
 
-word18: sugg	73 75 67 67
-OTP18:			  a1 2e 5a 0d
-enc(word18):	d2 5b 3d 6a
+word18: sugg  73 75 67 67
+OTP18:        a1 2e 5a 0d
+enc(word18):  d2 5b 3d 6a
 
-word19:	sick 	73 69 63 6b
-OTP19:			  a9 bf 83 9a
-enc(word19):	da d6 e0 f1
+word19:	sick  73 69 63 6b
+OTP19:        a9 bf 83 9a
+enc(word19):  da d6 e0 f1
 
-word20:	dyna	64 79 6e 61
-OTP20:			  bf 8d c3 ba
-enc(word20):	db f4 ad db
+word20:	dyna  64 79 6e 61
+OTP20:        bf 8d c3 ba
+enc(word20):  db f4 ad db
 
-word21:	popu	70 6f 70 75
-OTP21:			  77 be 57 9c
-enc(word21):	07 d1 27 e9
+word21:	popu  70 6f 70 75
+OTP21:        77 be 57 9c
+enc(word21):  07 d1 27 e9
 
-word22: clin	63 6c 69 6e
-OTP22:			  46 d3 98 46
-enc(word22):	25 bf f1 28
+word22: clin  63 6c 69 6e
+OTP22:        46 d3 98 46
+enc(word22):  25 bf f1 28
 
-word23:	napk	6e 61 70 6b
-OTP23:			  a3 44 0b e4
-enc(word23):	cd 25 7b 8f
+word23:	napk  6e 61 70 6b
+OTP23:        a3 44 0b e4
+enc(word23):  cd 25 7b 8f
 
-word24:	styl	73 74 79 6c
-OTP24:			  40 c3 f8 5a
-enc(word24):	33 b7 81 36
+word24:	styl  73 74 79 6c
+OTP24:        40 c3 f8 5a
+enc(word24):  33 b7 81 36
 ```
 
 ## Write down the shares on separate pieces of paper

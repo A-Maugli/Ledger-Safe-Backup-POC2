@@ -36,3 +36,19 @@ See the details at [ledger_safe_backup_example.md](./doc/ledger_safe_backup_exam
 - Restore your accounts and verify addresses and balances.
 
 See the details at [ledger_safe_restore_example.md](./doc/ledger_safe_restore_example.md)
+
+## Scripts
+```
+cd scripts
+./1_install.sh
+./2_slip39.sh
+./3_slip39_recover.sh
+```
+
+# Important News, 15-Nov-2025
+The Ledger "Seed Tool" app, written by aido, can make SSS shares from BIP39 menmonics and 
+recover BIP39 mnemonics from shares. *The app runs directly on the Ledger HW wallet.*
+It passed the Ledger security review carried out by the Ledger Donjon. 
+See the details at [Discover the technical aspects of the Seed Tool app](https://www.ledger.com/blog/seed-tool-app)
+
+The source of the app can be found at [app-seed-tool](https://github.com/aido/app-seed-tool)
